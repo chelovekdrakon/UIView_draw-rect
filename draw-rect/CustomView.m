@@ -10,12 +10,18 @@
 
 @implementation CustomView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    // Drawing code
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
+    CGContextFillRect(context, rect);
+    
+    CGRect square1 = CGRectMake(100, 100, 100, 100);
+    
+    CGContextAddRect(context, square1);
+    
+    CGContextSetFillColorWithColor(context, [UIColor yellowColor].CGColor);
+    CGContextFillPath(context);
 }
-*/
 
 @end
